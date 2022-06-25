@@ -40,16 +40,16 @@ function showWeather(target){
     }else{
 
     let errorDisplay = document.getElementById('Error')
-    errorDisplay.innerText = "Weather appr"
+    errorDisplay.innerText = "Weather App"
     let city = document.getElementById('city');
-    city.innerText = `City : ${target.name}, Country  ${target.sys.country}`;
+    city.innerText = `${target.name}, ${target.sys.country}`;
 
     let temperature = document.getElementById('temp');
-    temperature.innerHTML = `TEMPEARATURE  :${Math.round(target.main.temp)} C or ${c2f(target.main.temp)} F`;
+    temperature.innerHTML = `TEMP  :${Math.round(target.main.temp)} C or ${c2f(target.main.temp)} F`;
 
 
     let weatherType = document.getElementById('weather');
-    weatherType.innerText = `Type: ${target.weather[0].main}`;
+    weatherType.innerText = `Status: ${target.weather[0].main}`;
 
     let humid = document.getElementById('humidity');
     humid.innerText = `HUMIDITY : ${target.main.humidity}`;
