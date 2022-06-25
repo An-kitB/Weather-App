@@ -19,7 +19,7 @@ search.addEventListener('click', (event) => {
 });
 
 
-function gettarget(city) {
+function getWeather(city) {
     fetch(`${apiInfo.baseUrl}?q=${city}&appid=${apiInfo.key}&units=metric`)
     .then(target => {
         return dataCity = target.json();
