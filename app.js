@@ -38,6 +38,9 @@ function showWeather(weather){
         
 
     }else{
+
+    let errorDisplay = document.getElementById('Error')
+    errorDisplay.innerText = "Weather appr"
     let city = document.getElementById('city');
     city.innerText = `City : ${weather.name}, Country  ${weather.sys.country}`;
 
