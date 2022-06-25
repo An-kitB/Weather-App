@@ -19,22 +19,22 @@ search.addEventListener('click', (event) => {
 });
 
 
-function getWeather(city) {
+function gettarget(city) {
     fetch(`${apiInfo.baseUrl}?q=${city}&appid=${apiInfo.key}&units=metric`)
-    .then(weather => {
-        return dataCity = weather.json();
-    }).then(showWeather);
+    .then(target => {
+        return dataCity = target.json();
+    }).then(showtarget);
 }
 
-function showWeather(weather){
-    console.log(weather);
+function showWeather(target){
+    console.log(target);
 
 
-    if (weather.cod == 404){
+    if (target.cod == 404){
         console.log("error")
 
         let errorDisplay = document.getElementById('Error')
-        errorDisplay.innerText = `Error : ${weather.cod}  and message : ${weather.message}`
+        errorDisplay.innerText = `Error : ${target.cod}  and message : ${target.message}`
         
 
     }else{
@@ -42,17 +42,17 @@ function showWeather(weather){
     let errorDisplay = document.getElementById('Error')
     errorDisplay.innerText = "Weather appr"
     let city = document.getElementById('city');
-    city.innerText = `City : ${weather.name}, Country  ${weather.sys.country}`;
+    city.innerText = `City : ${target.name}, Country  ${target.sys.country}`;
 
     let temperature = document.getElementById('temp');
-    temperature.innerHTML = `TEMPEARATURE  :${Math.round(weather.main.temp)} C or ${c2f(weather.main.temp)} F`;
+    temperature.innerHTML = `TEMPEARATURE  :${Math.round(target.main.temp)} C or ${c2f(target.main.temp)} F`;
 
 
     let weatherType = document.getElementById('weather');
-    weatherType.innerText = `Type: ${weather.weather[0].main}`;
+    weatherType.innerText = `Type: ${target.weather[0].main}`;
 
     let humid = document.getElementById('humidity');
-    humid.innerText = `HUMIDITY : ${weather.main.humidity}`;
+    humid.innerText = `HUMIDITY : ${target.main.humidity}`;
     }
     
 
