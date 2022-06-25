@@ -31,7 +31,7 @@ function showWeather(weather){
 
 
     if (weather.cod == 404){
-        console.log("errot")
+        console.log("error")
 
         let errorDisplay = document.getElementById('Error')
         errorDisplay.innerText = `Error : ${weather.cod}  and message : ${weather.message}`
